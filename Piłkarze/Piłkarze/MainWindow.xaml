@@ -1,0 +1,45 @@
+﻿<Window x:Class="Piłkarze.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Piłkarze"
+        mc:Ignorable="d"
+        Title="Piłkarze" Height="450" Width="800" Closing="zamkniecieProgramu">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Grid.ColumnSpan="3" Width="200" Height="30" VerticalContentAlignment="Center"  Text="Wpisz imię: " LostFocus="imie_tb_lf" GotFocus="imie_tb_gf" x:Name="imie_tb" />
+        <TextBox Grid.Row="1" Grid.ColumnSpan="3" Width="200" Height="30" VerticalContentAlignment="Center"  Text="Wpisz nazwisko: " LostFocus="nazwisko_tb_lf" GotFocus="nazwisko_tb_gf" x:Name="nazwisko_tb"/>
+        <ComboBox Grid.Row="2" Grid.ColumnSpan="3" x:Name="wiek_cb" Margin="100,12,100,10" />
+        <Slider Grid.Row="3" Grid.ColumnSpan="3" IsSnapToTickEnabled="True" TickFrequency="1" x:Name="waga_sl"  Minimum="50" Maximum="110" Value="50" ValueChanged="waga_sl_ValueChanged"  Margin="100,14,100,14" />
+        <Button  Grid.Row="4" Grid.Column="0" Content="Dodaj" Width="80" Height="30" x:Name="dodaj_btn" Click="dodaj_btn_Click"/>
+        <Button  Grid.Row="4" Grid.Column="1" Content="Usuń" Width="80" Height="30" x:Name="usun_btn" Click="usun_btn_Click"/>
+        <Button  Grid.Row="4" Grid.Column="2" Content="Modyfikuj" Width="80" Height="30" x:Name="modyfikuj_btn" Click="modyfikuj_btn_Click"/>
+        <Label Grid.Column="0" Content="Imię" VerticalAlignment="Center" Margin="0,0,33,0" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Nazwisko" VerticalAlignment="Center" Margin="0,0,33,0"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Wiek" VerticalAlignment="Center" Margin="0,0,33,0" />
+        <Label Grid.Row="3" Grid.Column="0" Content="Waga" VerticalAlignment="Center" Margin="0,0,33,0"/>
+        <Label Grid.Row="3" Grid.Column="2" VerticalAlignment="Top" Margin="49,8,52,0" VerticalContentAlignment="Center" Height="26" Name="waga_wyswietlana" Content="50" />
+        <Label Grid.Row="3" Grid.Column="2" Content="kg" VerticalContentAlignment="Center" VerticalAlignment="Top" Margin="75,8,5,0"  />
+
+        <ListBox Grid.Column="3" Grid.RowSpan="8" Name="listapilkarzy_lb" SelectionChanged="listapilkarzy_lb_SelectionChanged">
+
+        </ListBox>
+
+    </Grid>
+</Window>
